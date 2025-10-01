@@ -120,8 +120,9 @@ fun CheckItem(label: String, checked: Boolean, onCheckedChange: (Boolean) -> Uni
         Checkbox(
             checked = checked,
             onCheckedChange = onCheckedChange,
-            modifier = Modifier.size(18.dp) // perkecil ukuran checkbox
+            modifier = Modifier.size(18.dp) // ukuran visual checkbox
         )
-        Text(label, fontSize = 12.sp) // perkecil teks label
+        Spacer(modifier = Modifier.width(8.dp)) // jarak antara checkbox & teks
+        Text(label, fontSize = 12.sp)
     }
 }
