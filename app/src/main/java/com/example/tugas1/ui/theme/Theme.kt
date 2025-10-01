@@ -1,58 +1,43 @@
 package com.example.tugas1.ui.theme
 
-import android.app.Activity
-import android.os.Build
-import androidx.compose.foundation.isSystemInDarkTheme
-import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
-import androidx.compose.material3.lightColorScheme
+import androidx.compose.material3.*
 import androidx.compose.runtime.Composable
-import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.graphics.Color
 
-private val DarkColorScheme = darkColorScheme(
-    primary = Purple80,
-    secondary = PurpleGrey80,
-    tertiary = Pink80
-)
+// Palet tetap
+private val BluePrimary = Color(0xFF468BE6) // tombol, aksen
+private val White       = Color(0xFFFEFEFE) // background & surface
+private val TextDark    = Color(0xFF0E0E0E) // teks utama di atas putih
+private val GreyStroke  = Color(0xFFD9D9D9) // outline/stroke/divider
 
-private val LightColorScheme = lightColorScheme(
-    primary = Purple40,
-    secondary = PurpleGrey40,
-    tertiary = Pink40
+// Skema warna (SELALU LIGHT)
+private val LightColors = lightColorScheme(
+    primary             = BluePrimary,
+    onPrimary           = White,
 
-    /* Other default colors to override
-    background = Color(0xFFFFFBFE),
-    surface = Color(0xFFFFFBFE),
-    onPrimary = Color.White,
-    onSecondary = Color.White,
-    onTertiary = Color.White,
-    onBackground = Color(0xFF1C1B1F),
-    onSurface = Color(0xFF1C1B1F),
-    */
+    background          = White,
+    onBackground        = TextDark,
+    surface             = White,
+    onSurface           = TextDark,
+
+    // Material3 pakai "outline" utk border/stroke
+    outline             = GreyStroke,
+    outlineVariant      = GreyStroke,
+
+    // Optional biar komponen outlined tetap konsisten
+    secondary           = BluePrimary,
+    onSecondary         = White,
+    surfaceVariant      = White,
+    onSurfaceVariant    = TextDark
 )
 
 @Composable
-fun Tugas1Theme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    // Dynamic color is available on Android 12+
-    dynamicColor: Boolean = true,
-    content: @Composable () -> Unit
-) {
-    val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
-
-        darkTheme -> DarkColorScheme
-        else -> LightColorScheme
-    }
-
+fun PATheme(content: @Composable () -> Unit) {
+    // Paksa LIGHT MODE (BG putih) tanpa mengikuti system dark theme
     MaterialTheme(
-        colorScheme = colorScheme,
-        typography = Typography,
-        content = content
+        colorScheme = LightColors,
+        typography  = MaterialTheme.typography,
+        shapes      = MaterialTheme.shapes,
+        content     = content
     )
 }

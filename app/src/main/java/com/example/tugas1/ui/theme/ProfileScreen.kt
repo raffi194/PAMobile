@@ -18,7 +18,7 @@ import com.example.tugas1.R
 fun ProfileScreen(navController: NavController) {
     Surface(
         modifier = Modifier.fillMaxSize(),
-        color = MaterialTheme.colorScheme.background
+        color = MaterialTheme.colorScheme.surfaceVariant
     ) {
         Column(
             modifier = Modifier.fillMaxSize(),
@@ -72,12 +72,12 @@ fun ProfileScreen(navController: NavController) {
                     .weight(1f, fill = false), // isi secukupnya, tidak memenuhi semua tinggi
                 verticalArrangement = Arrangement.Top
             ) {
-                ProfileItem(label = "First Name", value = "John")
-                ProfileItem(label = "Last Name", value = "Doe")
-                ProfileItem(label = "Username", value = "johndoe")
+                ProfileItem(label = "First Name", value = "Muhamad")
+                ProfileItem(label = "Last Name", value = "Raffi")
+                ProfileItem(label = "Username", value = "Raffi")
                 ProfileItem(label = "Phone", value = "08123456789")
                 ProfileItem(label = "Address", value = "Malang")
-                ProfileItem(label = "Birthdate", value = "01/01/2000")
+                ProfileItem(label = "Birthdate", value = "01/09/2004")
             }
 
             // Tombol aksi di bawah

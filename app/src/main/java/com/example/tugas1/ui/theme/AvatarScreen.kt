@@ -43,7 +43,7 @@ fun AvatarScreen(navController: NavController) {
             // Avatar dengan layer wajah + komponen
             Box(
                 modifier = Modifier
-                    .size(250.dp) // ukuran wajah
+                    .size(500.dp) // ukuran wajah
                     .background(Color.Transparent),
                 contentAlignment = Alignment.Center
             ) {
@@ -59,8 +59,8 @@ fun AvatarScreen(navController: NavController) {
                         painter = painterResource(R.drawable.rambut),
                         contentDescription = "Rambut",
                         modifier = Modifier
-                            .size(100.dp)   // rambut lebih kecil
-                            .offset(y = (-40).dp) // lebih naik ke atas
+                            .size(200.dp)   // rambut lebih kecil
+                            .offset(y = (-50).dp) // lebih naik ke atas
                     )
                 }
                 if (tampilMata) {
@@ -68,7 +68,7 @@ fun AvatarScreen(navController: NavController) {
                         painter = painterResource(R.drawable.mata),
                         contentDescription = "Mata",
                         modifier = Modifier
-                            .size(80.dp)
+                            .size(180.dp)
                             .offset(y = -10.dp)
                     )
                 }
@@ -77,8 +77,8 @@ fun AvatarScreen(navController: NavController) {
                         painter = painterResource(R.drawable.hidung),
                         contentDescription = "Hidung",
                         modifier = Modifier
-                            .size(40.dp)
-                            .offset(y = 70.dp)
+                            .size(50.dp)
+                            .offset(y = 30.dp)
                     )
                 }
                 if (tampilMulut) {
@@ -86,8 +86,8 @@ fun AvatarScreen(navController: NavController) {
                         painter = painterResource(R.drawable.mulut),
                         contentDescription = "Mulut",
                         modifier = Modifier
-                            .size(50.dp)   // sedikit lebih kecil
-                            .offset(y = 60.dp) // mulut lebih ke atas
+                            .size(80.dp)   // sedikit lebih kecil
+                            .offset(y = 80.dp) // mulut lebih ke atas
                     )
                 }
             }
